@@ -1,0 +1,34 @@
+Get http://localhost:3000/threads
+
+###
+
+Get http://localhost:3000/threads/62497069eeb436c315c526d8
+
+###
+
+Post http://localhost:3000/threads 
+Content-Type: application/json 
+
+{
+    "rubrik": "Varför är alla tjocka på Tinder ?",
+    "svar": "Då är väl Tinder en sida för överviktiga.",
+    "like": "aa ff"
+} 
+
+###
+DELETE http://localhost:3000/threads/624a9526e99c599f8d43a57a   
+
+
+###
+Get http://localhost:3000/threads/624970c2eeb436c315c526e0/replies
+
+
+###
+Post http://localhost:3000/threads/624970c2eeb436c315c526e0/replies
+Content-Type: application/json 
+
+{
+    
+    "svar": "ett nytt svar",
+} 
+

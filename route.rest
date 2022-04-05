@@ -10,21 +10,22 @@ Post http://localhost:3000/threads
 Content-Type: application/json 
 
 {
+    
     "rubrik": "Varför är alla tjocka på Tinder ?",
     "svar": "Då är väl Tinder en sida för överviktiga.",
-    "like": "aa ff"
+    "like": "1"
 } 
 
 ###
-DELETE http://localhost:3000/threads/624a9526e99c599f8d43a57a   
+DELETE http://localhost:3000/threads/624b1ca22661ab29b8dfb24d   
 
 
 ###
-Get http://localhost:3000/threads/624970c2eeb436c315c526e0/replies
+Get http://localhost:3000/threads/624b1c035f64bc275f4a3736/replies
 
 
 ###
-Post http://localhost:3000/threads/624970c2eeb436c315c526e0/replies
+Post http://localhost:3000/threads/624b1c035f64bc275f4a3736/replies
 Content-Type: application/json 
 
 {
@@ -32,3 +33,14 @@ Content-Type: application/json
     "svar": "ett nytt svar",
 } 
 
+###
+post http://localhost:3000/users
+Content-Type: application/json 
+
+{
+    "username": "dana",
+    "password": "password"
+}
+
+###
+get http://localhost:3000/users

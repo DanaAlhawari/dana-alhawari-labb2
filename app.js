@@ -31,7 +31,7 @@ app.get('/threads',(req, res) => {
     res.status(200).send(body)
 })
 ///lägga users
-//app.use('users' , require('./routes/users-route'))
+app.use('users' , require('./routes/users-route'))
 
 
 

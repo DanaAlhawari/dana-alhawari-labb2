@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../model/users');
 
-router.post('/users', (req, res) => {
+router.post('/', (req, res) => {
    // console.log(rep.body)
    // body = { "threadId": req.params.threadId, "replyId": req.params.replyId }
     res.set('Content-Type', 'application/json');
@@ -12,7 +12,7 @@ router.post('/users', (req, res) => {
     
 })
 //Hämtar user
-router.get("/users/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     let user;
     try {
         user = User.findById(req.params.id)
@@ -27,7 +27,7 @@ router.get("/users/:id", (req, res) => {
     }
 })
 //delete user 
-router.delete("/users/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     try {
         User.deleteOne({ _id: req.params.id });
     } catch (e) {
@@ -35,3 +35,4 @@ router.delete("/users/:id", (req, res) => {
     }
     res.status(200).end();
 })
+module.exports = router;

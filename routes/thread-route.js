@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router()
-const Thread = require('../models/thread')
+const Thread = require('../model/thread');
+//const Reply = require('../model/replies');
+//const Likes = require('../model/like');
 
 // Hämta all tråder **klar**
 router.get('/', async(req, res) => {
@@ -69,11 +71,12 @@ router.post('/:id/replies', async(req, res) => {
 router.post('/:id/replies/:id/like', (req, res) => {
     console.log('lägg like');
 })
-//Tar bort en like till ett svar
-router.delete('/:id/replies/:id/like', async (req, res) => {
-    const thread = await Thread.findById(req.params.id)
+//Tar bort en like till ett svar ???
+router.delete('/:id/replies/:id/like',  (req, res) => {
+   // const thread =  Thread.findById(req.params.id)
+    const thread = thread.remove({_id : req.params.like})
     try {
-        await res(thread.like).remove();
+        res.json(thread);
         res.json({ message: 'Deleted like till ett svar'});
     } catch (err) {
         res.status(500).json({message: err.message })

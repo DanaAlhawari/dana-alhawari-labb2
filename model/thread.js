@@ -4,12 +4,12 @@ const threadsSchema = new mongoose.Schema({
       type: String,
        required: true
     },
-    svar: [String
-       //{ type: String }
-       //required: true
-    ],
+    svar: 
+       { type: String,
+       required: true
+   },
     like: {
-        type: String,
+        type: Number,
        required: true
     }
 })
